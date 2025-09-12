@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yang Hu — Portfolio</title>
+  <meta name="description" content="Portfolio and research of Yang Hu.">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Yang Hu</a>
+      <nav class="nav" aria-label="Main">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#internships">Internships</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <h1>Hi, I’m Yang 👋</h1>
+      <p>Data & ML • Penn CIS • Building things that help people.</p>
+      <div class="cta-row">
+        <a class="button" href="mailto:you@example.com">Contact</a>
+        <a class="button secondary" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>I’m an MSE student in Computer & Information Science at Penn. I work across machine learning, medical imaging, and investor tooling. Below is a quick snapshot of my skills, experience, research, and projects.</p>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <ul class="pill-list">
+        <li>Python</li><li>PyTorch</li><li>scikit-learn</li><li>SQL</li><li>Pandas</li><li>Docker</li>
+        <li>MongoDB</li><li>Azure/AWS</li><li>Databricks</li><li>Data Engineering</li><li>ETL</li>
+      </ul>
+    </section>
+
+    <section id="internships" class="card">
+      <h2>Internships</h2>
+      <ul class="link-list">
+        <li>
+          <a href="work/jll-technologies.html">
+            <span class="item-title">JLL Technologies — Data Science Intern</span>
+            <span class="item-sub">Entity matching, URL validation, Spark/SQL pipelines</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="research" class="card">
+      <h2>Research</h2>
+      <ul class="link-list">
+        <li>
+          <a href="research/ct-severity.html">
+            <span class="item-title">CT Severity Prediction for Acute Pancreatitis</span>
+            <span class="item-sub">Multimodal model integrating imaging + clinical variables</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <ul class="link-list">
+        <li>
+          <a href="projects/traffic-light-detection.html">
+            <span class="item-title">Far-Distance Traffic Light Detection</span>
+            <span class="item-sub">Comparing multimodal LLMs vs CV baselines</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects/interview-coach.html">
+            <span class="item-title">Interview Coach Web App</span>
+            <span class="item-sub">Record ➜ transcribe ➜ AI feedback; Python + MongoDB</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects/investment-management-system.html">
+            <span class="item-title">Investment Management System</span>
+            <span class="item-sub">Budibase + Postgres; role-based permissions & workflows</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year"></span> Yang Hu · Built with vanilla HTML/CSS
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

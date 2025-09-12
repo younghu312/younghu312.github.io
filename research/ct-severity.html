@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CT Severity Prediction for Acute Pancreatitis — Yang Hu</title>
+  <meta name="description" content="CT Severity Prediction for Acute Pancreatitis">
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">{{ site_title if defined }}</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects">← Back</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container article">
+    <h1>CT Severity Prediction for Acute Pancreatitis</h1>
+    <div class="meta">Research</div>
+    <div class="prose">
+      
+        <p>Custom deep learning model integrating CT imaging features and clinical variables to predict downstream severity.</p>
+        <ul>
+          <li>Processed 10k+ DICOM folders; extracted metadata from CT slices.</li>
+          <li>Used MedSAM for pancreas segmentation; Dino-v2 for SSL.</li>
+          <li>Evaluation across internal & external datasets.</li>
+        </ul>
+        
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Yang Hu</div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
