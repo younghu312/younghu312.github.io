@@ -1,39 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JLL Technologies — Data Science Intern — Yang Hu</title>
-  <meta name="description" content="JLL Technologies — Data Science Intern">
-  <link rel="stylesheet" href="../assets/css/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">{{ site_title if defined }}</a>
-      <nav class="nav" aria-label="Main">
-        <a href="../index.html#projects">← Back</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container article">
-    <h1>JLL Technologies — Data Science Intern</h1>
-    <div class="meta">Internship</div>
-    <div class="prose">
-      
-        <p>Built an entity-matching pipeline for company URLs and validated 1.6M+ records. Combined Python + SQL + Spark, with rule-based and LLM-guided heuristics to correct complex URL issues.</p>
-        <ul>
-          <li>Designed robust data checks and logging.</li>
-          <li>Delivered dashboards for data quality tracking.</li>
-          <li>Collaborated with product and data teams on workflows.</li>
-        </ul>
-        <div class="figure">Add images or diagrams here (optional)</div>
-        
-    </div>
-  </main>
-  <footer class="site-footer">
-    <div class="container">© <span id="year"></span> Yang Hu</div>
-  </footer>
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+<section class="internship-detail card">
+  <!-- Company Logo -->
+  <div class="flex justify-center mb-4">
+    <img src="../assets/logos/jllt.png" alt="JLL Technologies Logo" class="h-16">
+  </div>
+
+  <!-- Company Overview -->
+  <div class="mb-4">
+    <h2 class="text-xl font-bold">JLL Technologies</h2>
+    <p>
+      <a href="https://www.jllt.com/" target="_blank" rel="noopener">JLL Technologies</a> (JLLT) is the technology division of <a href="https://www.jll.com/en-us/" target="_blank" rel="noopener">JLL</a> 
+      (NYSE: JLL), focused on data-driven real estate solutions and digital transformation in property management.
+    </p>
+  </div>
+
+  <!-- Projects -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold">Projects</h3>
+    <ul class="list-disc list-inside">
+      <li>Designed and implemented an entity-matching algorithm for JLL Signals’ ETL pipeline using Python and GPT-4</li>
+      <li>Validated over 1.6M company URLs with SQL & PySpark, improving correction accuracy by 16%</li>
+      <li>Developed SQL queries in Azure Databricks to reorganize data across multiple sources</li>
+      <li>Integrated Git, CI/CD, and Python unit testing to improve data pipeline reliability</li>
+    </ul>
+  </div>
+
+  <!-- Tech Stack -->
+  <div>
+    <h3 class="text-lg font-semibold">Tech Stack</h3>
+    <ul class="flex flex-wrap gap-2 text-sm">
+      <li class="px-2 py-1 bg-gray-200 rounded">Python</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">GPT-4</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">SQL</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">PySpark</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">Azure Databricks</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">Git</li>
+      <li class="px-2 py-1 bg-gray-200 rounded">CI/CD</li>
+    </ul>
+  </div>
+</section>
