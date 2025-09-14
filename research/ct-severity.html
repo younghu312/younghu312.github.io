@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CT Severity Prediction for Acute Pancreatitis — Yang Hu</title>
-  <meta name="description" content="CT Severity Prediction for Acute Pancreatitis">
+  <title>Acute Pancreatitis Severity Prediction — Yang Hu</title>
+  <meta name="description" content="CT-based AI for early acute pancreatitis severity prediction at NYU Langone Health">
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
@@ -12,26 +12,77 @@
     <div class="container header-inner">
       <a class="brand" href="/">Yang Hu</a>
       <nav class="nav" aria-label="Main">
-        <a href="../index.html#projects">← Back</a>
+        <a href="../index.html#research">← Back</a>
       </nav>
     </div>
   </header>
+
   <main class="container article">
-    <h1>CT Severity Prediction for Acute Pancreatitis</h1>
-    <div class="meta">Research</div>
+    <h1>Acute Pancreatitis Severity Prediction (CT-based AI)</h1>
+    <div class="meta">Research · Department of Radiology, <a href="https://nyulangone.org/" target="_blank" rel="noopener">NYU Langone Health</a></div>
+
     <div class="prose">
-      
-        <p>Custom deep learning model integrating CT imaging features and clinical variables to predict downstream severity.</p>
-        <ul>
-          <li>Processed 10k+ DICOM folders; extracted metadata from CT slices.</li>
-          <li>Used MedSAM for pancreas segmentation; Dino-v2 for SSL.</li>
-          <li>Evaluation across internal & external datasets.</li>
-        </ul>
-        
+
+      <!-- Brief Intro -->
+      <p>
+        We developed a deep learning model that predicts acute pancreatitis (AP) severity from admission contrast-enhanced CT
+        (CECT). Trained with self-supervised learning on large unlabeled CTs and fine-tuned on labeled studies, the model
+        outperformed clinical/imaging scores (BISAP, mCTSI) and generalized to an external multicenter registry.
+      </p>
+
+      <!-- Your Role & Contributions -->
+      <h3 class="text-lg font-semibold">Role & Contributions</h3>
+      <ul>
+        <li><strong>Research collaboration:</strong> Worked in Prof. Yiqiu Shen’s lab on CT-based deep learning to predict acute pancreatitis (AP) severity at admission; contributed across data engineering, model training, and integration into the lab’s workflow.</li>
+
+        <li><strong>Large-scale data pipeline:</strong> Built Python pipelines (pydicom, pandas) to process <em>10,000+ DICOM folders</em>, extracting key metadata (patient ID, series info, imaging parameters, diagnosis descriptors) to enable reliable slice selection and study-level tracking.</li>
+
+        <li><strong>Curated extraction:</strong> Authored fast metadata extractors for <em>2,000+</em> curated CT studies; standardized outputs for downstream training/validation splits and reproducible experiments.</li>
+
+        <li><strong>Image preprocessing:</strong> Implemented robust preprocessing with scikit-image (resizing, filtering, windowing) and OpenCV (intensity normalization), producing consistent 2D axial inputs for ViT-based encoders.</li>
+
+        <li><strong>Pancreas localization:</strong> Adapted the <em>MedSAM</em> transformer segmentation pipeline to axial CT slices; generated pancreas masks and integrated them into training to prioritize relevant anatomy and reduce low-signal slices.</li>
+
+        <li><strong>Slice selection strategy:</strong> Operationalized mask-guided selection of the most pancreas-relevant slices (top-k aggregation) to improve saliency fidelity and reduce noise during supervision.</li>
+
+        <li><strong>Self-supervised pretraining:</strong> Trained Vision Transformer encoders with <em>DINO-v2</em> on broader unlabeled CT data; implemented linear probing to identify the best pretraining epoch for task-specific fine-tuning, yielding up to <em>~5%</em> performance gains.</li>
+
+        <li><strong>Training infrastructure:</strong> Wrote custom PyTorch dataloaders for DICOM/NIfTI ingestion, on-the-fly augmentations, and series-level batching; streamlined study-level inference without requiring segmentation at test time.</li>
+
+        <li><strong>Model integration:</strong> Integrated the SSL-pretrained ViT encoders with the lab’s attention-based aggregation head for MAP/SAP ordinal prediction (two-step formulation: MAP vs non-MAP; SAP vs non-MAP).</li>
+
+        <li><strong>Experimentation & evaluation:</strong> Ran controlled experiments comparing pretraining strategies and pancreas-mask usage; monitored AUROC/AUPRC and calibration on held-out sets to guide model choices.</li>
+
+        <li><strong>Documentation & handoff:</strong> Documented pipelines, configuration templates, and expected I/O formats to support reproducibility and enable other researchers in the lab to run end-to-end training/inference.</li>
+      </ul>
+
+
+      <!-- Methods Snapshot -->
+      <h3 class="text-lg font-semibold">Methods Snapshot</h3>
+      <ul>
+        <li><strong>Data:</strong> 10,130 CT studies (8,335 pts) in development; 100 internal test; 518 external (Hungarian registry).</li>
+        <li><strong>Learning:</strong> Self-supervised pretraining (DINO/DINO-v2) → ViT encoder → attention-based aggregation; ordinal formulation (MAP↔MSAP↔SAP).</li>
+        <li><strong>Baselines:</strong> Compared to mCTSI and BISAP; statistics via AUROC/AUPRC, bootstrap CIs, DeLong/permutation tests.</li>
+      </ul>
+
+      <!-- Tech Stack -->
+      <h3 class="text-lg font-semibold">Tech Stack</h3>
+      <ul class="flex flex-wrap gap-2 text-sm">
+        <li class="px-2 py-1 bg-gray-200 rounded">Python</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">PyTorch</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">pydicom</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">pandas</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">scikit-image</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">OpenCV</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">ViT</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">MedSAM</li>
+        <li class="px-2 py-1 bg-gray-200 rounded">DINO-v2</li>
+      </ul>
     </div>
   </main>
+
   <footer class="site-footer">
-    <div class="container">© <span id="year"></span> Yang Hu </div>
+    <div class="container">© <span id="year"></span> Yang Hu</div>
   </footer>
   <script src="../assets/js/main.js"></script>
 </body>
