@@ -52,6 +52,9 @@ a:hover { text-decoration: underline; }
 .prose ul { margin: 0 0 12px 20px; }
 .figure { border:1px dashed var(--border); padding:10px; border-radius:12px; margin: 12px 0; text-align:center; color: var(--muted); }
 
+.button-row { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+.button-row h3 { margin:0; display:inline-flex; }
+
 /* Responsive nav */
 @media (max-width: 700px) {
   .menu-toggle { display:block; background:none; border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:10px; }
