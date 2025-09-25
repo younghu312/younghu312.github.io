@@ -74,6 +74,46 @@ a:hover { text-decoration: underline; }
   object-fit: cover;
 }
 
+.edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.edu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f1116;
+}
+
+.edu-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-text .item-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.edu-text .item-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.edu-logo img {
+  max-height: 40px;  /* keeps logos balanced */
+  width: auto;
+  display: block;
+}
+
+
 
 /* Responsive nav */
 @media (max-width: 700px) {
