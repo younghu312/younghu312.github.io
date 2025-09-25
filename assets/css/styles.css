@@ -108,9 +108,25 @@ a:hover { text-decoration: underline; }
 }
 
 .edu-logo img {
-  max-height: 40px;  /* keeps logos balanced */
+  max-height: 40px;   /* desktop/tablet */
   width: auto;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .edu-logo img {
+    max-height: 28px; /* shrink logos on mobile */
+  }
+
+  .edu-list li {
+    flex-direction: column;     /* stack text + logo */
+    align-items: flex-start;    /* keep alignment neat */
+    gap: 8px;                   /* add a little space */
+  }
+
+  .edu-logo {
+    align-self: flex-end;       /* logo aligns right if stacked */
+  }
 }
 
 
