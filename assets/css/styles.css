@@ -120,6 +120,13 @@ a:hover { text-decoration: underline; }
   margin-top: 6px;      /* gives breathing room below degree line */
 }
 
+.company-logo {
+  max-height: 64px;   /* ≈ h-16 */
+  width: auto;        /* scale by aspect ratio */
+  object-fit: contain;
+  display: block;
+}
+
 @media (max-width: 700px) {
   .edu-logo img {
     max-height: 28px; /* shrink logos on mobile */
