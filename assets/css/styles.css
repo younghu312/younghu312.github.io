@@ -113,6 +113,13 @@ a:hover { text-decoration: underline; }
   display: block;
 }
 
+.honors {
+  font-style: italic;
+  color: var(--text);   /* same color as normal text, not muted */
+  display: block;
+  margin-top: 6px;      /* gives breathing room below degree line */
+}
+
 @media (max-width: 700px) {
   .edu-logo img {
     max-height: 28px; /* shrink logos on mobile */
