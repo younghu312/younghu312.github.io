@@ -41,6 +41,13 @@ a:hover { text-decoration: underline; }
 .link-list a:hover { background:#0f1319; }
 .item-title { font-weight:600; color: var(--text); }
 .item-sub { color: var(--muted); font-size: 0.95rem; }
+.item-date {
+  font-size: 0.85rem;
+  color: #6b7280; /* subtle gray — Tailwind Gray-500 tone */
+  white-space: nowrap;
+  display: inline-block;
+  font-weight: 500;
+}
 
 .site-footer { border-top:1px solid var(--border); margin-top: 32px; padding: 20px 0; color: var(--muted); }
 
