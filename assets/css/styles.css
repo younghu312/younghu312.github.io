@@ -158,3 +158,75 @@ a:hover { text-decoration: underline; }
   .nav-list { display:none; flex-direction:column; background: rgba(11,12,16,0.98); position:absolute; right:16px; top:56px; padding:12px; border-radius:12px; border:1px solid var(--border); }
   .nav-list.open { display:flex; }
 }
+
+/* === Mobile hero: fill one screen, centered, no desktop changes === */
+@media (max-width: 700px) {
+  /* Help mobile browsers size to viewport height correctly */
+  html, body {
+    height: 100%;
+  }
+
+  /* Make the hero occupy one safe viewport height */
+  .hero {
+    min-height: 100svh;         /* avoids URL bar jump on mobile */
+    display: flex;
+    align-items: center;         /* vertically center content */
+    padding: 24px 0;             /* slightly tighter on mobile */
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;      /* stack text above photo */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 28rem;            /* keep lines readable */
+    margin: 0 auto;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: var(--muted);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+    margin-top: 10px;
+  }
+
+  .cta-row .button,
+  .cta-row .button.secondary {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .hero-photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Override desktop cap for a nicer mobile hero image */
+  .hero-photo img {
+    max-width: min(78vw, 340px);
+    width: 100%;
+    height: auto;
+    border-radius: 12px;         /* optional: subtle rounding */
+    object-fit: cover;
+  }
+}
